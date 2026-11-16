@@ -1,0 +1,79 @@
+:root {
+  --bg: #07081a;
+  --panel: #12143a;
+  --panel-2: #1b1e52;
+  --line: #2c3175;
+  --text: #eef0ff;
+  --muted: #9aa0d6;
+  --accent: #ffe066;
+  --good: #52b788;
+  --bad: #ff5d73;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.stars {
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(1px 1px at 10% 20%, #fff8, transparent),
+    radial-gradient(1px 1px at 30% 70%, #fff6, transparent),
+    radial-gradient(1.5px 1.5px at 55% 35%, #fff9, transparent),
+    radial-gradient(1px 1px at 75% 80%, #fff7, transparent),
+    radial-gradient(1px 1px at 90% 15%, #fff8, transparent),
+    radial-gradient(1.5px 1.5px at 20% 90%, #fff6, transparent),
+    radial-gradient(1px 1px at 65% 55%, #fff5, transparent),
+    radial-gradient(ellipse at 20% 10%, #3a1f6e55, transparent 50%),
+    radial-gradient(ellipse at 85% 90%, #0f4c7555, transparent 50%),
+    var(--bg);
+  background-size: 300px 300px, 260px 260px, 340px 340px, 280px 280px, 320px 320px, 360px 360px, 230px 230px, 100% 100%, 100% 100%, 100% 100%;
+}
+button {
+  font: inherit; color: var(--text); background: var(--panel-2);
+  border: 1px solid var(--line); border-radius: 12px; padding: 10px 16px; cursor: pointer;
+  transition: transform .08s, background .15s;
+}
+button:hover:not(:disabled) { background: #262a6e; }
+button:active:not(:disabled) { transform: scale(.97); }
+button:disabled { opacity: .4; cursor: default; }
+button.primary { background: linear-gradient(135deg, #ffd166, #f4a261); color: #1a1033; border: none; font-weight: 700; }
+button.danger { background: #5c1a2a; border-color: #8a2a40; }
+.dot { display: inline-block; width: .8em; height: .8em; border-radius: 50%; vertical-align: middle; border: 2px solid #0008; }
+
+.board-svg { width: 100%; height: 100%; display: block; user-select: none; -webkit-user-select: none; }
+.board-svg text { font-family: system-ui, sans-serif; }
+.board-svg .hex-icon { font-size: 24px; }
+.board-svg .hex-num { font-size: 17px; font-weight: 800; fill: #1a1a1a; }
+.board-svg .hex-num.hot { fill: #d62828; }
+.board-svg .port-icon { font-size: 14px; }
+.board-svg .port-label { font-size: 10px; font-weight: 700; fill: #8ecae6; }
+.board-svg .robber-icon { font-size: 15px; }
+.board-svg .target { cursor: pointer; }
+.board-svg .pulse { animation: pulse 1.2s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .35; } }
+
+.toast {
+  position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%);
+  background: #2a0f1d; border: 1px solid var(--bad); color: #ffd6dc;
+  padding: 12px 18px; border-radius: 12px; z-index: 100; max-width: 90vw; text-align: center;
+  animation: toast-in .2s ease-out;
+}
+@keyframes toast-in { from { transform: translate(-50%, 20px); opacity: 0; } }
+.board-svg .hex-hidden { font-size: 34px; font-weight: 800; fill: #7c83c9; }
+.board-svg .marker-icon, .board-svg .station-icon { font-size: 15px; }
+.board-svg .crew-num { font-size: 9px; font-weight: 800; fill: #000; }
+.board-svg .raiders-icon { font-size: 18px; }
+.board-svg .metro-icon { font-size: 14px; }
+.board-svg .guardian-num { font-size: 12px; font-weight: 800; }
+.board-svg .convoy-icon { font-size: 10px; }
+
+/* Regolamento (condiviso tra PC e telefono) */
+.rules h3 { margin: 18px 0 6px; color: var(--accent); font-size: 18px; text-transform: none; letter-spacing: 0; }
+.rules p, .rules li { line-height: 1.55; color: #d6d9ff; }
+.rules table { border-collapse: collapse; width: 100%; margin: 8px 0; }
+.rules th, .rules td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; }
+.rules th { color: var(--muted); font-weight: 600; }

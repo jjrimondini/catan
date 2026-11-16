@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frontiera Stellare: tabellone</title>
+  <link rel="stylesheet" href="/shared/common.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars"></div>
+  <header id="banner"></header>
+  <main id="app">
+    <section id="board-wrap"></section>
+    <aside id="side"></aside>
+  </main>
+  <div id="overlay" hidden></div>
+  <div id="rules-modal" hidden></div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="board.js"></script>
+</body>
+</html>

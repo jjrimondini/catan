@@ -1,0 +1,19 @@
+{
+  "name": "frontiera-stellare",
+  "version": "1.0.0",
+  "description": "Gioco di colonizzazione spaziale su esagoni: il PC è il tabellone, i telefoni sono le mani dei giocatori.",
+  "type": "module",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "qrcode": "^1.5.4",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "socket.io-client": "^4.8.1"
+  }
+}

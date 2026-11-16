@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#07081a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>Frontiera Stellare: la tua mano</title>
+  <link rel="stylesheet" href="/shared/common.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars"></div>
+  <div id="app"><div class="center muted">Connessione…</div></div>
+  <nav id="tabbar" hidden>
+    <button data-tab="game" class="on">🎮<span>Gioco</span><i class="dotbadge" hidden></i></button>
+    <button data-tab="map">🗺️<span>Mappa</span></button>
+    <button data-tab="cards">📋<span>Schede</span></button>
+  </nav>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="hand.js"></script>
+</body>
+</html>
